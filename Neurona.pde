@@ -5,15 +5,16 @@ class Neurona {
   float Alfa;    // Tasa de aprendizaje
 
   Neurona(int n, float Tasa) {
-    Pesos = new float[n];
+    Pesos = new float[n+1];
     Pesos[0] = 0.5;
-    Pesos[1] = -0.5;
+    Pesos[1] = 0.5;
+    Pesos[2] = 0.5;
     Alfa = Tasa;
   }
 
   int Clasificar(float x, float y) {
     float Suma = 0;
-    Suma += x*Pesos[0] + y*Pesos[1];
+    Suma += x*Pesos[0] + y*Pesos[1] + Pesos[2];
     return f(Suma);
   }
 
@@ -30,7 +31,8 @@ class Neurona {
     int Eval = Clasificar(x,y);
     float Error = Correcto - Eval;
     Pesos[0] = Pesos[0] + Alfa*Error*x;
-    Pesos[1] = Pesos[1] + Alfa*Error*y;         
+    Pesos[1] = Pesos[1] + Alfa*Error*y;  
+    Pesos[2] = Pesos[2] + Alfa*Error;         
   }
 
   // Return weights
