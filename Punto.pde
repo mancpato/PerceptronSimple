@@ -1,12 +1,20 @@
+/* 
+    Clase Punto
+    
+    Base para muchos programas: grafos, RND, regresión, ... 
+    
+    Miguel Angel Norzagaray Cosío
+    UABCS/DSC
+*/
 
 class Punto {
   float x;
   float y;
   int Tipo;
   
-  Punto(float _x, float _y) {
-    x = _x;
-    y = _y;
+  Punto(float X, float Y) {
+    x = X;
+    y = Y;
     Tipo = 1;
   }
  
@@ -19,3 +27,5 @@ class Punto {
     ellipse(x+width/2,y+height/2,8,8);
   }
 }
+
+/* Fin de archivo */

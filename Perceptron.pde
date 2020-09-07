@@ -1,4 +1,12 @@
-
+/* 
+    Perceptrón simple
+    
+    Programa de ejemplo de Redes Neuronales Artificiales.
+    Clasificador lineal simple.
+    
+    Miguel Angel Norzagaray Cosío
+    UABCS/DSC
+*/
 
 Punto[] Puntos = new Punto[100];
 Neurona Cerebro;
@@ -22,7 +30,7 @@ void draw()
   Ejes();
   for ( int i=0 ; i<Puntos.length ; i++ ) {
     Puntos[i].x = random(0,width)-width/2; 
-    Puntos[i].x = random(0,height)-height/2;
+    Puntos[i].y = random(0,height)-height/2;
   }
   for ( Punto p : Puntos ) {
     p.Tipo = Cerebro.Clasificar(p.x,p.y);
@@ -31,14 +39,10 @@ void draw()
   
   float x = random(0,width)-width/2;
   float y = random(0,height)-height/2;
-  Cerebro.Entrenamiento(x, y, 2*x>-y ? 1 : -1);
+  Cerebro.Entrenamiento(x, y, y<0 ? 1 : -1);
 
-  // Las siguientes instrucciones muestran el punto de entrenamiento
-  //fill(0,0,255);
-  //ellipse(x+width/2,y+height/2,15,15);
-  //println(Cerebro.Pesos[0], Cerebro.Pesos[1]);
   //if ( frameCount > 500 )
-  //noLoop();
+  noLoop();
 }
 
 void Ejes()

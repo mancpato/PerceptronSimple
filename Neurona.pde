@@ -1,4 +1,12 @@
-
+/* 
+    Perceptrón simple
+    
+    Programa de ejemplo de Redes Neuronales Artificiales.
+    Clasificador lineal simple.
+    
+    Miguel Angel Norzagaray Cosío
+    UABCS/DSC
+*/
 
 class Neurona {
   float[] Pesos;  
@@ -35,8 +43,6 @@ class Neurona {
     Pesos[2] = Pesos[2] + Alfa*Error;         
   }
 
-  // Return weights
-  float[] getWeights() {
-    return Pesos; 
-  }
 }
+
+/* Fin de archivo */
